@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --chassis: #EAEAE8;
+  --carbon: #181A1B;
+  --signal: #F15A24;
+  --ochre: #D19433;
+  --anodized: #7A8285;
+}
+
+body {
+  margin: 0;
+  background-color: var(--chassis);
+  color: var(--carbon);
+  font-family: 'Arial', sans-serif;
+}
