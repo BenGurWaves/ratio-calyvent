@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy — RATIO Typographic Scale Calculator</title>
+  <meta name="description" content="Privacy notice for RATIO. Every scale you generate is computed in your browser — nothing is uploaded, stored, or tracked.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ratio.calyvent.com/privacy.html">
+  <meta name="theme-color" content="#EAEAE8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    :root{
+      --chassis:#EAEAE8;
+      --carbon:#181A1B;
+      --signal:#F15A24;
+      --ochre:#D19433;
+      --anodized:#7A8285;
+    }
+    *,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; }
+    html{ -webkit-font-smoothing:antialiased; }
+    body{
+      background:var(--chassis);
+      color:var(--carbon);
+      font-family:'Helvetica Neue',Arial,sans-serif;
+      letter-spacing:-0.01em;
+      line-height:1.62;
+      min-height:100vh;
+    }
+    .mono{ font-family:ui-monospace,'SF Mono',Menlo,monospace; }
+
+    /* Top rail */
+    .rail{
+      position:sticky; top:0; z-index:10;
+      background:var(--chassis);
+      border-bottom:1px solid rgba(24,26,27,0.12);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 clamp(20px,5vw,40px); height:64px;
+    }
+    .mark{ display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit; }
+    .frac{ display:flex; flex-direction:column; align-items:center; gap:2px; font-weight:900; font-size:13px; letter-spacing:-0.02em; line-height:1; }
+    .frac .bar{ width:100%; height:2px; background:var(--signal); }
+    .wordmark{ font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.28em; color:rgba(24,26,27,0.6); }
+    .rail nav{ display:flex; gap:26px; }
+    .rail nav a{ font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.22em; color:rgba(24,26,27,0.6); text-decoration:none; transition:color .18s ease; }
+    .rail nav a:hover{ color:var(--signal); }
+    .rail nav a.active{ color:var(--carbon); }
+
+    /* Page body */
+    .wrap{ max-width:760px; margin:0 auto; padding:clamp(48px,9vw,120px) clamp(20px,5vw,40px) 96px; }
+    .eyebrow{ font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.3em; color:var(--signal); margin-bottom:20px; }
+    h1{
+      font-size:clamp(64px,16vw,150px);
+      font-weight:900; text-transform:uppercase;
+      letter-spacing:-0.04em; line-height:0.82;
+      margin-bottom:18px;
+    }
+    .meta{ font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.24em; color:rgba(24,26,27,0.5); margin-bottom:56px; }
+    .lead{ font-size:clamp(20px,2.6vw,26px); line-height:1.45; letter-spacing:-0.015em; max-width:62ch; }
+
+    section{ margin-top:48px; }
+    section h2{
+      display:flex; align-items:baseline; gap:14px;
+      font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.24em;
+      padding-top:18px; border-top:1px solid rgba(24,26,27,0.16);
+      margin-bottom:14px;
+    }
+    section h2 .idx{ color:var(--signal); font-feature-settings:'tnum'; }
+    section p{ font-size:17px; max-width:64ch; color:rgba(24,26,27,0.86); }
+    section p + p{ margin-top:12px; }
+    a.inline{ color:var(--carbon); text-decoration:none; border-bottom:1px solid var(--signal); padding-bottom:1px; transition:color .18s ease; }
+    a.inline:hover{ color:var(--signal); }
+
+    .foot{
+      margin-top:88px; padding-top:20px;
+      border-top:1px solid rgba(24,26,27,0.16);
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+      font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.22em;
+      color:rgba(24,26,27,0.5);
+    }
+    .foot a{ color:inherit; text-decoration:none; transition:color .18s ease; }
+    .foot a:hover{ color:var(--signal); }
+
+    @media (max-width:560px){
+      .rail nav{ gap:18px; }
+      h1{ line-height:0.86; }
+    }
+  </style>
+</head>
+<body>
+  <header class="rail">
+    <a class="mark" href="/">
+      <span class="frac">
+        <span>RA</span>
+        <span class="bar"></span>
+        <span>TIO</span>
+      </span>
+      <span class="wordmark">Ratio</span>
+    </a>
+    <nav>
+      <a href="/privacy.html" class="active">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="eyebrow">Rev. 2026 · ratio.calyvent.com</div>
+    <h1>Privacy</h1>
+    <div class="meta">100% client-side · zero data retained</div>
+
+    <p class="lead">RATIO computes every typographic scale inside your browser. Your base size, ratio, and exported code never leave your device — there is nothing for us to see, and nothing for us to keep.</p>
+
+    <section>
+      <h2><span class="idx">01</span><span>No server, no upload</span></h2>
+      <p>The geometric progression that generates each step, the live specimen rendering, and the CSS and Tailwind export are all calculated locally in JavaScript running on your machine. Your inputs are never transmitted anywhere.</p>
+    </section>
+
+    <section>
+      <h2><span class="idx">02</span><span>What we store</span></h2>
+      <p>Nothing. Your values exist only in memory while the tab is open. Close it and the slate is wiped — no database, no cookies, no local storage, no cache of your work.</p>
+    </section>
+
+    <section>
+      <h2><span class="idx">03</span><span>No accounts, no tracking</span></h2>
+      <p>There is no sign-up, no authentication, and no behavioural analytics or advertising embedded in the tool. We cannot identify you, and we do not try to.</p>
+    </section>
+
+    <section>
+      <h2><span class="idx">04</span><span>Third-party code</span></h2>
+      <p>RATIO loads only its own first-party scripts. No external code executes against the contents of your inputs.</p>
+    </section>
+
+    <section>
+      <h2><span class="idx">05</span><span>Children</span></h2>
+      <p>RATIO is a general-purpose design utility and is not directed at children under 13.</p>
+    </section>
+
+    <section>
+      <h2><span class="idx">06</span><span>Changes</span></h2>
+      <p>If this notice is revised, the updated version appears here. Because the tool retains nothing about you, changes only affect how it behaves on your device going forward.</p>
+    </section>
+
+    <section>
+      <h2><span class="idx">07</span><span>Contact</span></h2>
+      <p>RATIO is built and maintained by <a class="inline" href="https://velocity.calyvent.com" target="_blank" rel="noopener">Velocity</a>, a <a class="inline" href="https://calyvent.com" target="_blank" rel="noopener">Calyvent</a> studio. Questions may be directed there.</p>
+    </section>
+
+    <div class="foot">
+      <span>Forged by Velocity — Digital Architecture House</span>
+      <span><a href="/">Tool</a> · <a href="/terms.html">Terms</a></span>
+    </div>
+  </main>
+</body>
+</html>

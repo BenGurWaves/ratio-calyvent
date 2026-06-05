@@ -82,10 +82,10 @@ function App() {
           <span className="text-xs font-bold tracking-widest uppercase text-carbon/60">RATIO</span>
         </div>
         <div className="flex items-center gap-6">
-          <a href="/privacy.html" target="_blank" rel="noopener noreferrer" className="text-xs font-bold tracking-widest uppercase text-carbon/60 hover:text-signal transition-colors">
+          <a href="/privacy.html" className="text-xs font-bold tracking-widest uppercase text-carbon/60 hover:text-signal transition-colors">
             Privacy
           </a>
-          <a href="/terms.html" target="_blank" rel="noopener noreferrer" className="text-xs font-bold tracking-widest uppercase text-carbon/60 hover:text-signal transition-colors">
+          <a href="/terms.html" className="text-xs font-bold tracking-widest uppercase text-carbon/60 hover:text-signal transition-colors">
             Terms
           </a>
         </div>
