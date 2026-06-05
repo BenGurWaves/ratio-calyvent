@@ -45,7 +45,7 @@ function App() {
 
   const handleCustomMultiplierChange = (e) => {
     const value = parseFloat(e.target.value);
-    if (!isNaN(value) && value > 0) {
+    if (!isNaN(value) && value > 0 && value < 100) {
       setMultiplier(value);
       setCustomMultiplier(e.target.value);
     }
@@ -60,9 +60,13 @@ function App() {
   };
 
   const copyToClipboard = async (text) => {
-    await navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (err) {
+      console.error('Clipboard access denied:', err);
+    }
   };
 
   return (
@@ -80,9 +84,9 @@ function App() {
       </div>
 
       {/* Main Workspace */}
-      <div className="pt-16 flex min-h-screen">
+      <div className="pt-16 flex min-h-screen flex-col lg:flex-row">
         {/* Left Control Column */}
-        <div className="w-80 border-r border-carbon/10 p-6 flex flex-col gap-8">
+        <div className="w-full lg:w-80 border-r border-carbon/10 p-6 flex flex-col gap-8">
           <div>
             <label className="block text-xs font-bold tracking-widest uppercase text-carbon/60 mb-3">
               BASE SIZE (PX)
@@ -166,7 +170,7 @@ function App() {
             <h2 className="text-xs font-bold tracking-widest uppercase text-carbon/60 mb-4">
               CODE EXPORT
             </h2>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-bold tracking-widest uppercase text-carbon/60 mb-2">
                   CSS ROOT VARIABLES
@@ -194,6 +198,31 @@ function App() {
                 >
                   {copied ? 'COPIED' : 'COPY TAILWIND'}
                 </button>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="border-t border-carbon/10 pt-8">
+            <h2 className="text-xs font-bold tracking-widest uppercase text-carbon/60 mb-4">
+              FREQUENTLY ASKED QUESTIONS
+            </h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-sm font-bold text-carbon mb-2">Is RATIO free to use?</h3>
+                <p className="text-sm text-carbon/70">Yes, RATIO is 100% free to use online with no signup required.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-carbon mb-2">Does RATIO store my data?</h3>
+                <p className="text-sm text-carbon/70">No, all processing happens in your browser. Nothing is sent to a server. Your design work stays private.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-carbon mb-2">Can I use the generated code commercially?</h3>
+                <p className="text-sm text-carbon/70">Yes, you retain all rights to the code you generate from RATIO.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-carbon mb-2">What typographic scales does RATIO support?</h3>
+                <p className="text-sm text-carbon/70">RATIO supports 8 musical interval-based scales: Minor Second, Major Second, Minor Third, Major Third, Perfect Fourth, Augmented Fourth, Perfect Fifth, and Golden Ratio.</p>
               </div>
             </div>
           </div>
