@@ -72,7 +72,7 @@ function App() {
   return (
     <div className="min-h-screen bg-chassis text-carbon font-sans">
       {/* Top Bar - Logo */}
-      <div className="fixed top-0 left-0 right-0 h-16 bg-chassis border-b border-carbon/10 flex items-center px-6 z-50">
+      <div className="fixed top-0 left-0 right-0 h-16 bg-chassis border-b border-carbon/10 flex items-center justify-between px-6 z-50">
         <div className="flex items-center gap-4">
           <div className="logo-fraction">
             <div className="logo-numerator">RA</div>
@@ -80,6 +80,14 @@ function App() {
             <div className="logo-denominator">TIO</div>
           </div>
           <span className="text-xs font-bold tracking-widest uppercase text-carbon/60">RATIO</span>
+        </div>
+        <div className="flex items-center gap-6">
+          <a href="/privacy.html" target="_blank" rel="noopener noreferrer" className="text-xs font-bold tracking-widest uppercase text-carbon/60 hover:text-signal transition-colors">
+            Privacy
+          </a>
+          <a href="/terms.html" target="_blank" rel="noopener noreferrer" className="text-xs font-bold tracking-widest uppercase text-carbon/60 hover:text-signal transition-colors">
+            Terms
+          </a>
         </div>
       </div>
 
