@@ -1,16 +1,32 @@
-@import "tailwindcss";
-
 :root {
   --chassis: #EAEAE8;
+  --chassis-2: #E2E2DF;
+  --panel: #F2F2F0;
   --carbon: #181A1B;
   --signal: #F15A24;
   --ochre: #D19433;
   --anodized: #7A8285;
+  --hairline: rgba(24, 26, 27, 0.12);
+  --hairline-strong: rgba(24, 26, 27, 0.22);
+
+  --sans: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'Spline Sans Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 }
 
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
 body {
-  margin: 0;
   background-color: var(--chassis);
   color: var(--carbon);
-  font-family: 'Arial', sans-serif;
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.01em;
+}
+
+/* Hide the bespoke cursor logic on touch devices — no broken hover states */
+@media (hover: none) {
+  .reticle { display: none !important; }
 }
